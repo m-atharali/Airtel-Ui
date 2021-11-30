@@ -1,0 +1,14 @@
+.boxes{
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    color: white;
+    background-color:#283891;
+    font-size: larger;
+}
+.lbuttons{
+    width: 70%;
+    height:70px;
+    border-radius:10px;
+    font-size: 20px;
+}

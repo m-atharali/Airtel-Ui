@@ -1,0 +1,131 @@
+.body{
+    font-family: corbel !important;
+}
+.sidebox{
+    background: transparent linear-gradient(180deg, #0575E6 0%, #021B79 100%) 0% 0% no-repeat padding-box;
+    width: 100%;
+    height: 100vh;
+}
+
+.tab-side{
+width:70%;
+margin-top: 100px;
+margin-left: auto;
+margin-right: auto;
+height:auto;
+display: block;
+}
+/* .info-span{
+    display:block;
+} */
+.logo{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.login-text{
+    margin-bottom:25px;
+    width: 100%;
+    height: 50px;
+    border-radius:2px;
+    color:#707070;
+    border: 1px solid #62B145;
+    padding:10px;
+}
+.lbuttons{
+    width: 70%;
+    height:70px;
+    border-radius:10px;
+    font-size: 20px;
+}
+.select-signup{
+    width: 70%;
+    height: 70px;
+    border-radius:15px;
+}
+.active-text{
+    margin-top:-6px;
+    margin-left: 50px;
+}
+.sign-upText{
+    height:50px;
+    border: 1px solid #62B145;
+    border-radius:2px;
+    width: 100%;
+    color: #707070;
+    padding:10px;
+}
+.error{
+    width: 100%;
+    height: 250px;
+    background-color: #AD2929;
+}
+.container-edit{
+    padding: 0;
+    overflow-x: hidden;
+}
+.column-edit{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100vh;
+}
+#reg-response-error{
+    display: none;
+}
+#reg-response{
+    display: none;
+}
+.alert-success{
+display:none;
+}
+.alert-danger{
+display:none;    
+}
+.smscreen-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tranzImg{
+    width: 70%;
+}
+.btn-complete{
+    width:100%;
+    margin: auto;
+    height: 50px;
+    border: none;
+    background-color:#62B145;
+    color: white;
+    border-radius:3px;
+    display: none;
+}
+.success-divs{
+    height: 500px;
+    width: 100%;
+    background-color:#62B145;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    color: white;
+}
+.new-pay-btn{
+    width: 100%;
+    border: none;
+    height: 45px;
+    background-color:#62B145;
+    border-radius: 4px;
+    color: white;
+}
+.pay-new{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:250px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    .container-edit{
+        overflow-y: hidden;
+        padding:0;
+    }  
+
+  }
