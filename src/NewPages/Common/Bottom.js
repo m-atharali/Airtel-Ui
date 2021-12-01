@@ -12,7 +12,7 @@ export default class Bottom extends React.Component {
       <div className="bottom-text">
         Powered by{" "}
         {/* <a href="https://idverify.com.ng" style={{ fontWeight: "bold" }}> */}
-        Afritech
+        wavelength-consultancy.com
         {/* </a> */}
       </div>
     );

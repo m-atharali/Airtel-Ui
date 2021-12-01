@@ -1,9 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
 import Right2 from "../Common/Right2";
 import swal from "sweetalert";
-import { postData3 } from "../../services/request";
+import { postData } from "../../services/request";
 import Bottom from "../Common/Bottom";
 
 var link = require("../../assets/Lead-images/Afritech-logo.png");
@@ -18,29 +17,18 @@ export default class AdminLogin extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    sessionStorage.removeItem("adminLogin");
-    sessionStorage.removeItem("adminDetail");
-  };
+  componentDidMount = () => {};
   checkLogin = async () => {
     this.setState({
       loder: true,
     });
     if (!this.state.username == "" && !this.state.password == "") {
       const login = this.state;
-      const result = await postData3("/api/lead/admin", login);
+      const result = await postData("login/check", login);
+
       if (result.length == 1) {
-        console.log(result);
-        if (result[0].SuperAdmin === true) {
-          sessionStorage.setItem("adminLogin", true);
-          swal("You are Logged as SuperAdmin");
-          this.props.history.push("/superhome");
-        } else {
-          sessionStorage.setItem("adminLogin", true);
-          sessionStorage.setItem("adminDetail", JSON.stringify(result));
-          swal("You are Logged as Admin");
-          this.props.history.push("/adminhome");
-        }
+        swal("You are Logged as Admin");
+        this.props.history.push("/adminhome");
       } else {
         this.setState({ username: "", password: "" });
         swal(
@@ -69,7 +57,7 @@ export default class AdminLogin extends React.Component {
                 overflowX: "hidden",
               }}
             >
-              <Row style={{ padding: "10px" }}>
+              {/* <Row style={{ padding: "10px" }}>
                 <Col xs="8" lg="8"></Col>
                 <Col lg="3" className="">
                   <img
@@ -83,7 +71,7 @@ export default class AdminLogin extends React.Component {
                     }}
                   />
                 </Col>
-              </Row>
+              </Row> */}
 
               <br />
               <Container>

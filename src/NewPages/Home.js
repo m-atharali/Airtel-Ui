@@ -13,9 +13,9 @@ export default class Home extends React.Component {
   }
 
   render() {
-    if (this.state.loggedin === true) {
-      return <Redirect to="/" />;
-    }
+    // if (this.state.loggedin === true) {
+    //   return <Redirect to="/" />;
+    // }
     return (
       <Container fluid={true} className="container-edit">
         <Row noGutters={true}>
@@ -24,16 +24,14 @@ export default class Home extends React.Component {
             <Container>
               <Row className="justify-content-center">
                 <Col lg="8" xs="12" className="text-center">
-                  <div className="fcv-heading">
-                    Welcome to Leadway Verification Platform.
-                  </div>
+                  <div className="fcv-heading">Welcome to Airtel Platform.</div>
                 </Col>
                 <Col lg="7">
                   <Row
                     style={{ padding: "20px" }}
                     className="justify-content-center"
                   >
-                    <Col lg="6">
+                    {/* <Col lg="6">
                       <img
                         src={link}
                         alt=""
@@ -44,7 +42,7 @@ export default class Home extends React.Component {
                           width: "100%",
                         }}
                       />
-                    </Col>
+                    </Col> */}
                   </Row>
                 </Col>
               </Row>
@@ -56,7 +54,7 @@ export default class Home extends React.Component {
                       <button
                         className="btn btn-bio"
                         onClick={() => {
-                          this.props.history.push("/login");
+                          this.props.history.push("/admin");
                         }}
                       >
                         Proceed

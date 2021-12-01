@@ -22,16 +22,16 @@ export default class NavBar extends React.Component {
   }
 
   componentDidMount = () => {
-    let login = sessionStorage.getItem("adminLogin");
-    if (login != "true") {
-      this.props.history.push("/admin");
-    } else {
-      let name = sessionStorage.getItem("adminDetail");
-      let Name = JSON.parse(name);
-      this.setState({
-        AdminName: Name[0].Name,
-      });
-    }
+    // let login = sessionStorage.getItem("adminLogin");
+    // if (login != "true") {
+    //   this.props.history.push("/admin");
+    // } else {
+    //   let name = sessionStorage.getItem("adminDetail");
+    //   let Name = JSON.parse(name);
+    //   this.setState({
+    //     AdminName: Name[0].Name,
+    //   });
+    // }
   };
 
   render() {
