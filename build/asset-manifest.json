@@ -1,22 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.eb8411de.chunk.css",
-    "main.js": "/static/js/main.f111f437.chunk.js",
+    "main.js": "/static/js/main.6a7e6059.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.f624dc9d.js",
     "static/css/2.a8d349d0.chunk.css": "/static/css/2.a8d349d0.chunk.css",
-    "static/js/2.f3ea6ebe.chunk.js": "/static/js/2.f3ea6ebe.chunk.js",
+    "static/js/2.ecd7c58a.chunk.js": "/static/js/2.ecd7c58a.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.5268ba288196e69c8857d11e65dc2b88.js": "/precache-manifest.5268ba288196e69c8857d11e65dc2b88.js",
+    "precache-manifest.63c2b67cefaeb91448c3c7d251933aa6.js": "/precache-manifest.63c2b67cefaeb91448c3c7d251933aa6.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.f3ea6ebe.chunk.js.LICENSE": "/static/js/2.f3ea6ebe.chunk.js.LICENSE",
-    "static/media/Afritech-logo.png": "/static/media/Afritech-logo.86227a5e.png",
+    "static/js/2.ecd7c58a.chunk.js.LICENSE": "/static/js/2.ecd7c58a.chunk.js.LICENSE",
     "static/media/logo.png": "/static/media/logo.cf558630.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f624dc9d.js",
     "static/css/2.a8d349d0.chunk.css",
-    "static/js/2.f3ea6ebe.chunk.js",
+    "static/js/2.ecd7c58a.chunk.js",
     "static/css/main.eb8411de.chunk.css",
-    "static/js/main.f111f437.chunk.js"
+    "static/js/main.6a7e6059.chunk.js"
   ]
 }
