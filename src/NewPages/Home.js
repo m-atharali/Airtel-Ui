@@ -4,8 +4,6 @@ import "../assets/Style/personal.css";
 import { Redirect } from "react-router-dom";
 import Bottom from "./Common/Bottom";
 
-var link = require("../assets/Lead-images/Afritech-logo.png");
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);

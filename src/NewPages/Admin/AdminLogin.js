@@ -5,8 +5,6 @@ import swal from "sweetalert";
 import { postData } from "../../services/request";
 import Bottom from "../Common/Bottom";
 
-var link = require("../../assets/Lead-images/Afritech-logo.png");
-
 export default class AdminLogin extends React.Component {
   constructor(props) {
     super(props);
