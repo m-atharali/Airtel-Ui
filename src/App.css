@@ -2,13 +2,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-.payment-box {
+/* .payment-box {
   background-color: #dedede;
   width: 70%;
   height: 410px;
   margin: auto;
-}
-.card-number-text {
+} */
+/* .card-number-text {
   border: 1px solid #283891;
   width: 100%;
   border-radius: 2px;
@@ -37,10 +37,7 @@ body {
   background-color: #62b145;
   border-radius: 2px;
 }
-.container-edit {
-  padding: 0;
-  overflow-x: hidden;
-}
+
 .faceCamView {
   width: 50%;
   height: 400px;
@@ -177,20 +174,10 @@ body {
   color: white;
   text-decoration: none !important;
 }
-#video {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
-  -moz-transform: rotateY(180deg); /* Firefox */
-}
-.reactEasyCrop_CropArea {
-  display: none !important;
-}
-.reactEasyCrop_Container {
-  top: 30px !important;
-}
+
 
 /* color */
-.cl-00 {
+/* .cl-00 {
   color: #00bff2;
 }
 .cl-40 {
@@ -208,10 +195,9 @@ body {
   bottom: 10px;
   text-align: center;
   font-size: 14px;
-  /* font-weight: bold; */
-}
+} */
 /* font size */
-.px26 {
+/* .px26 {
   font-size: 26px;
 }
 .px20 {
@@ -236,10 +222,10 @@ body {
   background-color: #04478a;
   height: 40px;
   width: 133px;
-}
+} */
 
 /* Nav bar */
-.nav-link {
+/* .nav-link {
   font-size: 18px;
   font-weight: 600;
 }
@@ -330,12 +316,11 @@ body {
   background-color: #283891;
   color: white;
 }
-.btn-primary {
-  background-color: #04478a;
-}
+
 .end-text {
   text-align: end;
-}
+} */
+
 /* Chart */
 .container1 {
   max-width: 1080px;
@@ -344,4 +329,46 @@ body {
 
 .section {
   padding: 50px 0;
+}
+
+/* new */
+.fs-22 {
+  font-size: 22px;
+}
+.fw-bold {
+  font-weight: bold;
+}
+.bo-top {
+  border-top: 1px solid #f2f3f4;
+}
+.container-edit {
+  padding: 0;
+  overflow-x: hidden;
+}
+.fcv-heading {
+  font-size: 34px;
+  color: black;
+}
+.btn-bio {
+  width: 100%;
+  background-color: #04478a !important;
+  color: white !important;
+}
+.fcv-subheading {
+  font-size: 20px;
+  color: black;
+}
+.btn-primary {
+  background-color: #04478a;
+}
+
+.count-show {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+@media (max-width: 500px) {
+  .fcv-subheading {
+    font-size: 16px !important;
+  }
 }

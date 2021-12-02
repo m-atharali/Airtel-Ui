@@ -14,3 +14,21 @@ export var postData = (route, data) => {
       });
   });
 };
+
+export const getData = (route, data) => {
+  return new Promise((resolve, reject) => {
+    fetch(baseUrl + route, {
+      method: "GET",
+      body: JSON.stringify(data),
+    }) // getInventory
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        resolve(data);
+      })
+      .catch((error) => {
+        console.error("error in post api", error);
+        reject(error);
+      });
+  });
+};
