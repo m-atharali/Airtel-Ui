@@ -33,9 +33,9 @@ export default class MyAgent extends React.Component {
   getChart = async () => {
     const report = {
       sdate: this.state.startDate,
-      edate: moment().endOf(this.state.endDate),
+      edate: this.state.endDate,
     };
-    console.log(this.state);
+    console.log(report);
 
     const result = await postData("facial-recognition/report", report);
     console.log(result);
@@ -91,7 +91,7 @@ export default class MyAgent extends React.Component {
     return (
       <Container fluid={true} className="container-edit ">
         <div className="row mt-2">
-          <div className="col-8">
+          <div className="col-12 col-sm-8">
             <div className="row">
               <div className="col-4 ml-2">
                 <label>Start Date</label>
@@ -130,7 +130,7 @@ export default class MyAgent extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-4 count-show">
+          <div className="col-12 col-sm-4 count-show">
             Total Hits = {this.state.totalCount}
           </div>
         </div>
@@ -138,7 +138,7 @@ export default class MyAgent extends React.Component {
           {this.state.chart === true && <CanvasJSChart options={options} />}
         </div>
         <div className="row mt-2 text-center fs-22 fw-bold bo-top">
-          <div className="col-4">
+          <div className="col-12 col-sm-4">
             <div className="row">
               <div className="col-12 ">Date</div>
             </div>
@@ -151,13 +151,13 @@ export default class MyAgent extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-2 mt-4">
+          <div className="col-4 col-sm-2 mt-4">
             Total Hits <br /> {this.state.totalHits}
           </div>
-          <div className="col-2 mt-4">
+          <div className="col-4 col-sm-2 mt-4">
             Success <br /> {this.state.responseCount}
           </div>
-          <div className="col-2 mt-4">
+          <div className="col-4 col-sm-2 mt-4">
             Drop <br /> {this.state.dropCount}
           </div>
         </div>
