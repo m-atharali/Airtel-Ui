@@ -10,6 +10,8 @@ export default class MyAgent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      lodding: false,
+      error: false,
       data: [],
       startDate: "",
       endDate: "",
@@ -24,13 +26,22 @@ export default class MyAgent extends React.Component {
     };
   }
   componentDidMount = async () => {
+    this.setState({
+      lodding: true,
+    });
     const result = await getData("facial-recognition/count");
     console.log(result);
     this.setState({
       totalCount: result.count,
     });
+    this.setState({
+      lodding: false,
+    });
   };
   getChart = async () => {
+    this.setState({
+      lodding: true,
+    });
     const report = {
       sdate: this.state.startDate,
       edate: this.state.endDate,
@@ -58,6 +69,10 @@ export default class MyAgent extends React.Component {
       drop: (dropArray.length / totalLength) * 100,
       responseCount: responseArray.length,
       dropCount: dropArray.length,
+    });
+    this.setState({
+      lodding: false,
+      error: true,
     });
   };
 
@@ -134,6 +149,16 @@ export default class MyAgent extends React.Component {
             Total Hits = {this.state.totalCount}
           </div>
         </div>
+        {this.state.lodding === true && (
+          <div className="row justify-content-center">
+            <div className="col-3 mt-3">
+              <div className="spinner-border text-primary"></div>
+              <div className="spinner-border text-primary"></div>
+              <div className="spinner-border text-primary"></div>
+              <div className="spinner-border text-primary"></div>
+            </div>
+          </div>
+        )}
         <div className="row mt-3">
           {this.state.chart === true && <CanvasJSChart options={options} />}
         </div>
@@ -161,6 +186,14 @@ export default class MyAgent extends React.Component {
             Drop <br /> {this.state.dropCount}
           </div>
         </div>
+        {this.state.error === true && (
+          <div className="row mt-2">
+            <div className="col-2">Drop status 408</div>
+            <div className="col-3">Invalid Image base64 image</div>
+            <div className="col-3">Required params are missing</div>
+            <div className="col-3">File size greater than 1mb</div>
+          </div>
+        )}
       </Container>
     );
   }
