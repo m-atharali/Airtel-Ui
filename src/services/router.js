@@ -5,7 +5,6 @@ import Home from "../NewPages/Home";
 
 import AdminLogin from "../NewPages/Admin/AdminLogin";
 import AdminHome from "../NewPages/Admin/AdminHome";
-import Test from "../NewPages/Test";
 
 export default class RouterContainer extends React.Component {
   render() {
@@ -17,7 +16,7 @@ export default class RouterContainer extends React.Component {
           {/* admin */}
           <Route path="/admin" exact component={AdminLogin} />
           <Route path="/adminhome" exact component={AdminHome} />
-          <Route path="/test" exact component={Test} />
+
           {/* <Route path="/creat" exact component={UserCreate} />
           <Route path="/counttable" exact component={CheckCount} />
           <Route path="/agent" exact component={AgentDetail} />

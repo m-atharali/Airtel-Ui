@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import CanvasJSReact from "./../asset/canvasjs.react";
 import { Container } from "reactstrap";
 import { postData, getData } from "../../services/request";
-import moment from "moment-mini";
+import TotalCount from "./SWRData";
+import Loader from "../Common/Loader";
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -18,26 +19,13 @@ export default class MyAgent extends React.Component {
       response: "",
       drop: "",
       persantage: "",
-      totalCount: "",
       totalHits: "",
       responseCount: "",
       dropCount: "",
       chart: false,
     };
   }
-  componentDidMount = async () => {
-    this.setState({
-      lodding: true,
-    });
-    const result = await getData("facial-recognition/count");
-    console.log(result);
-    this.setState({
-      totalCount: result.count,
-    });
-    this.setState({
-      lodding: false,
-    });
-  };
+
   getChart = async () => {
     this.setState({
       lodding: true,
@@ -103,6 +91,7 @@ export default class MyAgent extends React.Component {
         },
       ],
     };
+
     return (
       <Container fluid={true} className="container-edit ">
         <div className="row mt-2">
@@ -146,53 +135,41 @@ export default class MyAgent extends React.Component {
             </div>
           </div>
           <div className="col-12 col-sm-4 count-show">
-            Total Hits = {this.state.totalCount}
+            <TotalCount />
           </div>
         </div>
-        {this.state.lodding === true && (
-          <div className="row justify-content-center">
-            <div className="col-3 mt-3">
-              <div className="spinner-border text-primary"></div>
-              <div className="spinner-border text-primary"></div>
-              <div className="spinner-border text-primary"></div>
-              <div className="spinner-border text-primary"></div>
+        {this.state.lodding === true ? (
+          <Loader />
+        ) : (
+          <>
+            <div className="row mt-3">
+              {this.state.chart === true && <CanvasJSChart options={options} />}
             </div>
-          </div>
-        )}
-        <div className="row mt-3">
-          {this.state.chart === true && <CanvasJSChart options={options} />}
-        </div>
-        <div className="row mt-2 text-center fs-22 fw-bold bo-top">
-          <div className="col-12 col-sm-4">
-            <div className="row">
-              <div className="col-12 ">Date</div>
-            </div>
-            <div className="row">
-              <div className="col-6">
-                From <br /> {this.state.startDate}
+            <div className="row mt-2 text-center fs-22 fw-bold bo-top">
+              <div className="col-12 col-sm-4">
+                <div className="row">
+                  <div className="col-12 ">Date</div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    From <br /> {this.state.startDate}
+                  </div>
+                  <div className="col-6">
+                    To <br /> {this.state.endDate}
+                  </div>
+                </div>
               </div>
-              <div className="col-6">
-                To <br /> {this.state.endDate}
+              <div className="col-4 col-sm-2 mt-4">
+                Total Hits <br /> {this.state.totalHits}
+              </div>
+              <div className="col-4 col-sm-2 mt-4">
+                Success <br /> {this.state.responseCount}
+              </div>
+              <div className="col-4 col-sm-2 mt-4">
+                Drop <br /> {this.state.dropCount}
               </div>
             </div>
-          </div>
-          <div className="col-4 col-sm-2 mt-4">
-            Total Hits <br /> {this.state.totalHits}
-          </div>
-          <div className="col-4 col-sm-2 mt-4">
-            Success <br /> {this.state.responseCount}
-          </div>
-          <div className="col-4 col-sm-2 mt-4">
-            Drop <br /> {this.state.dropCount}
-          </div>
-        </div>
-        {this.state.error === true && (
-          <div className="row mt-2">
-            <div className="col-2">Drop status 408</div>
-            <div className="col-3">Invalid Image base64 image</div>
-            <div className="col-3">Required params are missing</div>
-            <div className="col-3">File size greater than 1mb</div>
-          </div>
+          </>
         )}
       </Container>
     );
