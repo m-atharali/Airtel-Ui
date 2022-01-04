@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import App from "../App";
 import Home from "../NewPages/Home";
-
 import AdminLogin from "../NewPages/Admin/AdminLogin";
 import AdminHome from "../NewPages/Admin/AdminHome";
 
