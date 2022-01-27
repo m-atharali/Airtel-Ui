@@ -86,7 +86,7 @@ export default class MyAgent extends React.Component {
           yValueFormatString: "#,###'%'",
           dataPoints: [
             { name: "Response", y: this.state.response },
-            { name: "Drop", y: this.state.drop },
+            { name: "Unmatched", y: this.state.drop },
           ],
         },
       ],
@@ -166,7 +166,7 @@ export default class MyAgent extends React.Component {
                 Success <br /> {this.state.responseCount}
               </div>
               <div className="col-4 col-sm-2 mt-4">
-                Drop <br /> {this.state.dropCount}
+                Unmatched <br /> {this.state.dropCount}
               </div>
             </div>
           </>
