@@ -37,26 +37,15 @@ export default class MyAgent extends React.Component {
     console.log(report);
 
     const result = await postData("facial-recognition/report", report);
-    console.log(result);
-    const totalLength = result.length;
-    const responseArray = [];
-    const dropArray = [];
-    for (let a = 0; a < totalLength; a++) {
-      if (result[a].Response == true) {
-        responseArray.push(result[a]);
-      } else {
-        dropArray.push(result[a]);
-      }
-    }
-    console.log(responseArray);
-    console.log(dropArray);
+    const totalLength = result.Match + result.NonMatch;
+
     this.setState({
       chart: true,
       totalHits: totalLength,
-      response: (responseArray.length / totalLength) * 100,
-      drop: (dropArray.length / totalLength) * 100,
-      responseCount: responseArray.length,
-      dropCount: dropArray.length,
+      response: (result.Match / totalLength) * 100,
+      drop: (result.NonMatch / totalLength) * 100,
+      responseCount: result.Match,
+      dropCount: result.NonMatch,
     });
     this.setState({
       lodding: false,
